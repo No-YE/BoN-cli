@@ -14,7 +14,7 @@ var (
 	userLicense string
 
 	rootCmd = &cobra.Command{
-		Use:   "BoN-cli",
+		Use:   "bon",
 		Short: "A CRUD client for BoN",
 		Long:  `BoN-cli is a client for BoN CRUD`,
 	}
