@@ -1,4 +1,4 @@
-module BoN-cli
+module github.com/No-YE/BoN-cli
 
 go 1.14
 
