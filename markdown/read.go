@@ -1,21 +1,16 @@
 package markdown
 
 import (
+	"fmt"
 	"io/ioutil"
 	"os"
 )
 
 // Read read markdown file
-func Read(name string) string {
-	path, err := os.Getwd()
+func Read(path string) string {
+	dat, err := ioutil.ReadFile(path)
 	if err != nil {
-		println(err)
-		os.Exit(1)
-	}
-
-	dat, err := ioutil.ReadFile(path + "/" + name)
-	if err != nil {
-		println(err)
+		fmt.Println(err)
 		os.Exit(1)
 	}
 
