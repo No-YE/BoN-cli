@@ -3,6 +3,7 @@ package client
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"os"
 )
@@ -23,7 +24,7 @@ func Upload(post Post, token string) {
 
 	req, err := http.NewRequest("POST", url, buff)
 	if err != nil {
-		println(err)
+		fmt.Println(err)
 		os.Exit(1)
 	}
 
@@ -33,7 +34,7 @@ func Upload(post Post, token string) {
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		println(err)
+		fmt.Println(err)
 		os.Exit(1)
 	}
 

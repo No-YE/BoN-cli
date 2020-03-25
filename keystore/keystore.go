@@ -1,6 +1,7 @@
 package keystore
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/peterbourgon/diskv"
@@ -24,7 +25,7 @@ func GetToken() string {
 	token, err := d.Read(key)
 
 	if err != nil {
-		println(err)
+		fmt.Println(err)
 		os.Exit(1)
 	}
 
