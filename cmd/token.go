@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/No-YE/BoN-cli/keystore"
 	"github.com/spf13/cobra"
 )
 
@@ -10,7 +11,7 @@ var (
 		Short: "register token",
 		Long:  `register jwt token for BoN-cli`,
 		Run: func(cmd *cobra.Command, args []string) {
-			println(token)
+			keystore.SaveToken(token)
 		},
 	}
 
