@@ -14,7 +14,6 @@ var (
 			keystore.SaveToken(token)
 		},
 	}
-
 	token string
 )
 
