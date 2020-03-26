@@ -6,8 +6,8 @@ import (
 	"path"
 
 	"github.com/No-YE/BoN-cli/client"
+	localFile "github.com/No-YE/BoN-cli/file"
 	"github.com/No-YE/BoN-cli/keystore"
-	"github.com/No-YE/BoN-cli/markdown"
 	"github.com/spf13/cobra"
 )
 
@@ -17,9 +17,13 @@ var (
 		Short: "upload markdown file",
 		Long:  `upload markdown file to BoN with token`,
 		Run: func(cmd *cobra.Command, args []string) {
-			mdFile := markdown.Read(getMdPath(file))
+			mdFile := string(localFile.Read(getMdPath(file)))
 
-			post := client.Post{title, categories, mdFile}
+			post := client.Post{
+				Title:      title,
+				Categories: categories,
+				Content:    mdFile,
+			}
 			token := keystore.GetToken()
 
 			client.Upload(post, token)
