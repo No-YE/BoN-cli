@@ -9,7 +9,7 @@ import (
 
 var (
 	d = diskv.New(diskv.Options{
-		BasePath:     "bon",
+		BasePath:     "bon-store",
 		CacheSizeMax: 1 * 1,
 	})
 	key = "token"
