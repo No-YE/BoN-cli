@@ -3,13 +3,14 @@ package keystore
 import (
 	"fmt"
 	"os"
+	"path"
 
 	"github.com/peterbourgon/diskv"
 )
 
 var (
 	d = diskv.New(diskv.Options{
-		BasePath:     "bon-store",
+		BasePath:     path.Join(os.Getenv("GOPATH"), "bon-store"),
 		CacheSizeMax: 1 * 1,
 	})
 	key = "token"
